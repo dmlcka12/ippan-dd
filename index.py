@@ -1,8 +1,8 @@
 import discord
 import asyncio
 import random
+import os
 from discord.ext import commands
-token = "ODQzNDQ5MzYyMTgwOTk3MTUw.YKEBbg.xiY13QHtxlEWzYAx83XewEZw7NI"
 client  = discord.Client()
 
 @client.event
@@ -49,6 +49,7 @@ async def on_message(message):
     embed.set_footer(text="with Strange Code")
     await message.channel.send(embed=embed)
 
-client.run(token)
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
 
 
